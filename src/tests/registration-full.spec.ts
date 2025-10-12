@@ -23,18 +23,12 @@ test.describe("Registration Form - Full Flow @smoke", () => {
     await expect(registrationPage.detailsCountry).toHaveText(VALID_REGISTRATION_DATA.country);
     await expect(registrationPage.detailsGender).toHaveText(VALID_REGISTRATION_DATA.gender);
     await expect(registrationPage.detailsLanguage).toHaveText(VALID_REGISTRATION_DATA.language);
-    await expect(registrationPage.detailsSkills).toHaveText(
-      Array.isArray(VALID_REGISTRATION_DATA.skills)
-        ? VALID_REGISTRATION_DATA.skills.join(", ")
-        : VALID_REGISTRATION_DATA.skills,
-    );
-    await expect(registrationPage.detailsHobbies).toHaveText(
-      Array.isArray(VALID_REGISTRATION_DATA.hobbies)
-        ? VALID_REGISTRATION_DATA.hobbies.join(", ")
-        : VALID_REGISTRATION_DATA.hobbies,
-    );
-    const dob = `${VALID_REGISTRATION_DATA.dateOfBirth.day} ${VALID_REGISTRATION_DATA.dateOfBirth.month} ${VALID_REGISTRATION_DATA.dateOfBirth.year}`;
-    await expect(registrationPage.detailsDateOfBirth).toHaveText(dob);
+    await expect(registrationPage.detailsSkills).toHaveText(VALID_REGISTRATION_DATA.skills.join(", "));
+    await expect(registrationPage.detailsHobbies).toHaveText(VALID_REGISTRATION_DATA.hobbies.join(", "));
+    const dateOfBirth = `${VALID_REGISTRATION_DATA.dateOfBirth.day} ${VALID_REGISTRATION_DATA.dateOfBirth.month} ${VALID_REGISTRATION_DATA.dateOfBirth.year}`;
+    await expect(registrationPage.detailsDateOfBirth).toHaveText(dateOfBirth);
     await expect(registrationPage.detailsPassword).toHaveText(/^\*+$/);
+    const maskedPasswordText = await registrationPage.detailsPassword.textContent();
+    expect(maskedPasswordText?.length).toBe(VALID_REGISTRATION_DATA.password.length);
   });
 });

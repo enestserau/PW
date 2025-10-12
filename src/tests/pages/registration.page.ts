@@ -15,7 +15,6 @@ export class RegistrationPage {
   private readonly genderRadioFemale: Locator;
   private readonly languageInput: Locator;
   private readonly skillsSelect: Locator;
-  private readonly hobbiesCheckboxes: Locator;
   private readonly yearSelect: Locator;
   private readonly monthSelect: Locator;
   private readonly daySelect: Locator;
@@ -50,7 +49,6 @@ export class RegistrationPage {
     this.genderRadioFemale = page.locator('input[name="gender"][value="female"]');
     this.languageInput = page.locator("#language");
     this.skillsSelect = page.locator("#skills");
-    this.hobbiesCheckboxes = page.locator(".hobby");
     this.yearSelect = page.locator("#year");
     this.monthSelect = page.locator("#month");
     this.daySelect = page.locator("#day");
