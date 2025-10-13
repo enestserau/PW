@@ -20,6 +20,7 @@ export class LoginRegisterPage {
   private readonly errorMessage: Locator;
   private readonly errorMessageOnRegister: Locator;
   private readonly successMessage: Locator;
+  private readonly successLoginMessage: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -39,6 +40,7 @@ export class LoginRegisterPage {
     this.errorMessage = page.locator("#errorMessage");
     this.errorMessageOnRegister = page.locator("#errorMessageOnRegister");
     this.successMessage = page.locator('#errorMessageOnRegister:has-text("Successfully registered")');
+    this.successLoginMessage = page.locator("#successMessage");
   }
 
   async open() {
@@ -64,6 +66,10 @@ export class LoginRegisterPage {
 
   async isSuccessMessageVisible(): Promise<boolean> {
     return await this.successMessage.isVisible();
+  }
+
+  async isSuccessMessageAfterLogin(): Promise<boolean> {
+    return await this.successLoginMessage.isVisible();
   }
 
   async getErrorMessage(): Promise<string> {

@@ -21,8 +21,8 @@ export const VALID_REGISTRATION_DATA: IRegistrationData = {
 };
 
 export const VALID_LOGIN_CREDENTIALS: ILoginCredentials = {
-  username: "TestUser123",
-  password: "SecurePass123",
+  username: "test@gmail.com",
+  password: "SecretPw123!@#",
 };
 
 export const INVALID_USERNAME_CASES = {
