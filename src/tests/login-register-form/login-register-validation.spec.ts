@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
-import { LoginRegisterPage } from "./pages/login-register.page.js";
-import { VALID_LOGIN_CREDENTIALS, INVALID_USERNAME_CASES, INVALID_PASSWORD_CASES } from "./fixtures/user.data.js";
+import { LoginRegisterPage } from "../pages/login-register.page.js";
+import { VALID_LOGIN_CREDENTIALS, INVALID_USERNAME_CASES, INVALID_PASSWORD_CASES } from "../data/user.data.js";
 
 test.describe("Login/Register Form Validation @smoke", () => {
   let loginPage: LoginRegisterPage;

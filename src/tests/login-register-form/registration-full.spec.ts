@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
-import { RegistrationPage } from "./pages/registration.page.js";
-import { VALID_REGISTRATION_DATA } from "./fixtures/user.data.js";
+import { RegistrationPage } from "../pages/registration.page.js";
+import { VALID_REGISTRATION_DATA } from "../data/user.data.js";
 
 test.describe("Registration Form - Full Flow @smoke", () => {
   let registrationPage: RegistrationPage;

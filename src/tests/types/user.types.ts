@@ -22,3 +22,9 @@ export interface ILoginCredentials {
   username: string;
   password: string;
 }
+
+export interface IInvalidRegisterCredentials {
+  username: string;
+  password: string;
+  errorMessage: string;
+}
