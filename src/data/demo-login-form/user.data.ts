@@ -1,4 +1,4 @@
-import type { IRegistrationData, ILoginCredentials, IInvalidRegisterCredentials } from "../types/user.types.js";
+import type { IRegistrationData, ILoginCredentials, IInvalidRegisterCredentials } from "./types/user.types.js";
 
 export const VALID_REGISTRATION_DATA: IRegistrationData = {
   firstName: "John",

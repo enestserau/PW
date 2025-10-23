@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
-import { LoginRegisterPage } from "../pages/login-register.page.js";
-import { INVALID_REGISTER_CRED } from "../data/user.data.js";
+import { LoginRegisterPage } from "../../../ui/pages/demo-login-register/login-register.page.js";
+import { INVALID_REGISTER_CRED } from "../../../data/demo-login-form/user.data.js";
 
 test.describe("Demo Login/Register - Negative validations (DDT)", () => {
   test.beforeEach(async ({ page }) => {
