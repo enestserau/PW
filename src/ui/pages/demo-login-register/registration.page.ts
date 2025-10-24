@@ -1,5 +1,5 @@
 import type { Page, Locator } from "@playwright/test";
-import type { IRegistrationData } from "./../types/user.types.js";
+import type { IRegistrationData } from "../../data/demo-login-form/types/user.types.js";
 
 export class RegistrationPage {
   readonly page: Page;

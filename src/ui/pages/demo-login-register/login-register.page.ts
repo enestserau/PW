@@ -1,6 +1,6 @@
 import type { Page } from "@playwright/test";
 import type { Locator } from "@playwright/test";
-import type { ILoginCredentials } from "./../types/user.types.js";
+import type { ILoginCredentials } from "../../../data/demo-login-form/types/user.types.js";
 
 export class LoginRegisterPage {
   readonly page: Page;
@@ -12,6 +12,7 @@ export class LoginRegisterPage {
   private readonly registerOnLoginButton: Locator;
 
   // Register form elements
+  readonly registerForm: Locator;
   private readonly registerUsername: Locator;
   private readonly registerPassword: Locator;
   private readonly registerButton: Locator;
@@ -32,6 +33,7 @@ export class LoginRegisterPage {
     this.registerOnLoginButton = page.locator("#registerOnLogin");
 
     // Register form
+    this.registerForm = page.locator(".registerForm");
     this.registerUsername = page.locator("#userNameOnRegister");
     this.registerPassword = page.locator("#passwordOnRegister");
     this.registerButton = page.locator("#register");
@@ -51,6 +53,10 @@ export class LoginRegisterPage {
     await this.loginUsername.fill(credentials.username);
     await this.loginPassword.fill(credentials.password);
     await this.loginSubmitButton.click();
+  }
+
+  async isRegisterFormVisible() {
+    return await this.registerForm.isVisible();
   }
 
   async openRegisterForm() {
