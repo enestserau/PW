@@ -1,4 +1,4 @@
-import { MANUFACTURERS } from "../../../data/sales-portal/products/manufactures.js";
+import { MANUFACTURERS } from "data/sales-portal/products/manufactures.js";
 
 export interface IProduct {
   name: string;

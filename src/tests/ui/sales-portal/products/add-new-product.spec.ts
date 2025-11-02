@@ -1,6 +1,6 @@
-import { test, expect } from "../../../../fixtures/business.fixture.js";
-import { NOTIFICATIONS } from "../../../../data/sales-portal/notifications.js";
-import { generateProductData } from "../../../../data/sales-portal/products/generateProductData.js";
+import { test, expect } from "fixtures/business.fixture.js";
+import { NOTIFICATIONS } from "data/sales-portal/notifications.js";
+import { generateProductData } from "data/sales-portal/products/generateProductData.js";
 
 test.describe("[Sales Portal] [Products]", () => {
   test("Add new product", async ({ loginAsAdmin, homePage, productsListPage, addNewProductPage }) => {

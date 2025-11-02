@@ -1,6 +1,6 @@
 import type { Page } from "@playwright/test";
 import type { Locator } from "@playwright/test";
-import type { ILoginCredentials } from "../../../data/demo-login-form/types/user.types.js";
+import type { ILoginCredentials } from "data/demo-login-form/types/user.types.js";
 
 export class LoginRegisterPage {
   readonly page: Page;

@@ -1,7 +1,7 @@
 import { faker } from "@faker-js/faker";
-import { IProduct } from "../../../data/sales-portal/types/product.types.js";
-import { getRandomEnumValue } from "../../../utils/enum.utils.js";
-import { MANUFACTURERS } from "../../../data/sales-portal/products/manufactures.js";
+import { IProduct } from "data/sales-portal/types/product.types.js";
+import { getRandomEnumValue } from "utils/enum.utils.js";
+import { MANUFACTURERS } from "data/sales-portal/products/manufactures.js";
 
 export function generateProductData(params?: Partial<IProduct>): IProduct {
   return {
