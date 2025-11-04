@@ -6,9 +6,10 @@ import { HomePage } from "../../../../ui/pages/sales-portal/home.page.js";
 import { AddNewProductPage } from "../../../../ui/pages/sales-portal/products/addNewProduct.page.js";
 import { ProductsListPage } from "../../../../ui/pages/sales-portal/products/productsList.page.js";
 import { LoginPage } from "../../../../ui/pages/sales-portal/login.page.js";
+import _ from "lodash";
 
 test.describe("[Sales Portal] [Products]", async () => {
-  test("Add new product", async ({ page }) => {
+  test("Check product details", async ({ page }) => {
     const homePage = new HomePage(page);
     const productsListPage = new ProductsListPage(page);
     const addNewProductPage = new AddNewProductPage(page);
@@ -32,5 +33,14 @@ test.describe("[Sales Portal] [Products]", async () => {
     await productsListPage.waitForOpened();
     await expect(productsListPage.toastMessage).toContainText(NOTIFICATIONS.PRODUCT_CREATED);
     await expect(productsListPage.tableRowByName(productData.name)).toBeVisible();
+
+    await expect.soft(productsListPage.nameCell(productData.name)).toHaveText(productData.name);
+    await expect.soft(productsListPage.priceCell(productData.name)).toHaveText(`$${productData.price.toString()}`);
+    await expect.soft(productsListPage.manufacturerCell(productData.name)).toHaveText(productData.manufacturer);
+
+    const productFromTable = await productsListPage.getProductData(productData.name);
+    const expectedProduct = _.omit(productData, ["notes", "amount"]);
+    const actualProduct = _.omit(productFromTable, ["createdOn"]);
+    expect(actualProduct).toEqual(expectedProduct);
   });
 });
