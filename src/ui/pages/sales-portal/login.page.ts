@@ -1,6 +1,6 @@
 import { BasePage } from "./base.page.js";
-import { SALES_PORTAL_URL } from "../../../config/env.js";
-import { ICredentials } from "../../../data/sales-portal/types/credentials.types.js";
+import { SALES_PORTAL_URL } from "config/env.js";
+import { ICredentials } from "data/sales-portal/types/credentials.types.js";
 
 export class LoginPage extends BasePage {
   readonly emailInput = this.page.locator("#emailinput");

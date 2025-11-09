@@ -1,6 +1,6 @@
-import { SalesPortalPage } from "../salesPortal.page.js";
-import { IProductInTable } from "../../../../data/sales-portal/types/product.types.js";
-import { MANUFACTURERS } from "../../../../data/sales-portal/products/manufactures.js";
+import { SalesPortalPage } from "ui/pages/sales-portal/salesPortal.page.js";
+import { IProductInTable } from "data/sales-portal/types/product.types.js";
+import { MANUFACTURERS } from "data/sales-portal/products/manufactures.js";
 import { ProductDeleteModal } from "./delete.modal.js";
 
 export class ProductsListPage extends SalesPortalPage {
