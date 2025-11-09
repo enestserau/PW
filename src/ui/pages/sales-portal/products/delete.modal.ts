@@ -1,4 +1,4 @@
-import { SalesPortalPage } from "../salesPortal.page.js";
+import { SalesPortalPage } from "ui/pages/sales-portal/salesPortal.page.js";
 
 export class ProductDeleteModal extends SalesPortalPage {
   readonly uniqueElement = this.page.locator("div[name='confirmation-modal']");

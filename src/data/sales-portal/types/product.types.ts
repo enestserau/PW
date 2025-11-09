@@ -1,4 +1,5 @@
-import { MANUFACTURERS } from "../../../data/sales-portal/products/manufactures.js";
+import { MANUFACTURERS } from "data/sales-portal/products/manufactures.js";
+import { ID, IResponseFields } from "./core.types.js";
 
 export interface IProduct {
   name: string;
@@ -13,3 +14,15 @@ export interface ICreatedOn {
 }
 
 export interface IProductInTable extends Pick<IProduct, "name" | "manufacturer" | "price">, ICreatedOn {}
+
+export interface IProductDetails extends Required<IProduct>, ICreatedOn {}
+
+export interface IProductFromResponse extends Required<IProduct>, ICreatedOn, ID {}
+
+export interface IProductResponse extends IResponseFields {
+  Product: IProductFromResponse;
+}
+
+export interface IProductsResponse extends IResponseFields {
+  Products: IProductFromResponse[];
+}

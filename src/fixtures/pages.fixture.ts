@@ -1,8 +1,8 @@
 import { test as base, expect } from "@playwright/test";
-import { HomePage } from "../ui/pages/sales-portal/home.page.js";
-import { AddNewProductPage } from "../ui/pages/sales-portal/products/addNewProduct.page.js";
-import { ProductsListPage } from "../ui/pages/sales-portal/products/productsList.page.js";
-import { LoginPage } from "../ui/pages/sales-portal/login.page.js";
+import { HomePage } from "ui/pages/sales-portal/home.page.js";
+import { AddNewProductPage } from "ui/pages/sales-portal/products/addNewProduct.page.js";
+import { ProductsListPage } from "ui/pages/sales-portal/products/productsList.page.js";
+import { LoginPage } from "ui/pages/sales-portal/login.page.js";
 
 export interface IPages {
   homePage: HomePage;

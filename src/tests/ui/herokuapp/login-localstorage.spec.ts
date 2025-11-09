@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
-import { LoginRegisterPage } from "../../../ui/pages/demo-login-register/login-register.page.js";
-import { VALID_LOGIN_CREDENTIALS } from "../../../data/demo-login-form/user.data.js";
+import { LoginRegisterPage } from "ui/pages/demo-login-register/login-register.page.js";
+import { VALID_LOGIN_CREDENTIALS } from "data/demo-login-form/user.data.js";
 
 test.describe("[UI][POM] Local Storage", () => {
   test("Should login via localStorage (POM)", async ({ page }) => {
