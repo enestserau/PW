@@ -1,6 +1,7 @@
 import { SalesPortalPage } from "../salesPortal.page.js";
 import { IProductInTable } from "../../../../data/sales-portal/types/product.types.js";
 import { MANUFACTURERS } from "../../../../data/sales-portal/products/manufactures.js";
+import { ProductDeleteModal } from "./delete.modal.js";
 
 export class ProductsListPage extends SalesPortalPage {
   readonly productsPageTitle = this.page.locator("h2.fw-bold");
@@ -20,6 +21,9 @@ export class ProductsListPage extends SalesPortalPage {
   readonly editButton = (productName: string) => this.tableRowByName(productName).getByTitle("Edit");
   readonly detailsButton = (productName: string) => this.tableRowByName(productName).getByTitle("Details");
   readonly deleteButton = (productName: string) => this.tableRowByName(productName).getByTitle("Delete");
+
+  readonly peoductDeleteModal = new ProductDeleteModal(this.page);
+  readonly closeToastMessageButton = this.page.locator(".toast button.btn-close");
 
   readonly uniqueElement = this.addNewProductButton;
 
@@ -51,5 +55,9 @@ export class ProductsListPage extends SalesPortalPage {
       });
     }
     return data;
+  }
+
+  async closeToastMessage() {
+    await this.closeToastMessageButton.click();
   }
 }

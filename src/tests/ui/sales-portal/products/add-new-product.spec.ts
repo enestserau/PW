@@ -1,27 +1,10 @@
-import { test, expect } from "@playwright/test";
-import { credentials } from "../../../../config/env.js";
+import { test, expect } from "../../../../fixtures/business.fixture.js";
 import { NOTIFICATIONS } from "../../../../data/sales-portal/notifications.js";
 import { generateProductData } from "../../../../data/sales-portal/products/generateProductData.js";
-import { HomePage } from "../../../../ui/pages/sales-portal/home.page.js";
-import { AddNewProductPage } from "../../../../ui/pages/sales-portal/products/addNewProduct.page.js";
-import { ProductsListPage } from "../../../../ui/pages/sales-portal/products/productsList.page.js";
-import { LoginPage } from "../../../../ui/pages/sales-portal/login.page.js";
 
-test.describe("[Sales Portal] [Products]", async () => {
-  test("Add new product", async ({ page }) => {
-    const homePage = new HomePage(page);
-    const productsListPage = new ProductsListPage(page);
-    const addNewProductPage = new AddNewProductPage(page);
-    const loginPage = new LoginPage(page);
-
-    await homePage.open();
-
-    await expect(loginPage.emailInput).toBeVisible();
-    await loginPage.emailInput.fill(credentials.username);
-    await loginPage.passwordInput.fill(credentials.password);
-    await loginPage.loginButton.click();
-
-    await homePage.waitForOpened();
+test.describe("[Sales Portal] [Products]", () => {
+  test("Add new product", async ({ loginAsAdmin, homePage, productsListPage, addNewProductPage }) => {
+    await loginAsAdmin();
     await homePage.clickOnViewModule("Products");
     await productsListPage.waitForOpened();
     await productsListPage.clickAddNewProduct();
